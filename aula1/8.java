@@ -4,27 +4,29 @@
 
 import java.util.Scanner;
 
-public class API {
-  public static void main(String[] args) {
+public class API
+{
+  public static void main(String args[])
+  {
     Scanner input = new Scanner(System.in);
-    int w, h, cnt = 0;
-    while (true) {
-      w = input.nextInt();
-      if ( w == -1 ) {
+    
+    int cnt = 0;
+    float peso = input.nextFloat();
+
+    while (peso != -1)
+    {
+      float altura = input.nextFloat();
+
+      if (altura == -1)
         break;
-      }
-
-      h = input.nextInt();
-      if ( h == -1 ) {
-        break;
-      }
-
-
-      if ((double)w / (h * h) > 25) {
+      
+      if (peso/(altura * altura) > 25)
         cnt++;
-      }
-    } 
 
-    System.out.println(cnt);
+      peso = input.nextFloat();
+    }
+
+    System.out.println("Quantidade de pessoas a cima do peso: " + cnt);
+    input.close();
   }
 }

@@ -3,18 +3,32 @@
 
 import java.util.Scanner;
 
-public class API {
-  public static void main(String[] args) {
+public class API
+{
+  public static void main(String args[])
+  {
     Scanner input = new Scanner(System.in);
-    int max = -99999, max_s = -99999;
-    for (int student = 0; student < 30; student++) {
-      for (int grade = 0; grade < 4; grade++) {
-        int n = input.nextInt();
-        max_s = Math.max(max_s, n);
+    
+    int maxTurma = 0;
+    for (int i = 0; i < 5; i++)
+    {
+      int maxAluno = 0;
+
+      for (int j = 0; j < 4; j++)
+      {
+        int nota = input.nextInt();
+
+        if (nota > maxAluno)
+          maxAluno = nota;
       }
-      System.out.println(max_s);
-      max = Math.max(max, max_s);
+
+      System.out.println("Maior nota aluno: " + maxAluno);
+
+      if (maxAluno > maxTurma)
+        maxTurma = maxAluno;
     }
-    System.out.println(max);
+
+    System.out.println("Maior nota turma: " + maxTurma);
+    input.close();
   }
 }

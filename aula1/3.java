@@ -3,15 +3,23 @@
 
 import java.util.Scanner;
 
-public class API {
-  public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
-    int n, sum = 0;
-    do {
+public class API
+{
+  public static void main(String args[])
+  {
+    Scanner input = new Scanner(System.in); 
+    
+    int s = 0;
+    int n = 0;
+
+    while (n != -1)
+    {
+      s += n;
       n = input.nextInt();
-      sum += n;
-    } while (n != -1);
-    sum += 1;
-    System.out.println(sum);
+    }
+
+    System.out.println("Soma: " + s);
+
+    input.close();
   }
 }
